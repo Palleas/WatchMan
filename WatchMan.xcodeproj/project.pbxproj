@@ -10,7 +10,26 @@
 		7AA168101BBC213300A84B29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1680F1BBC213300A84B29 /* AppDelegate.swift */; };
 		7AA168121BBC213300A84B29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA168111BBC213300A84B29 /* Assets.xcassets */; };
 		7AA168151BBC213300A84B29 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA168131BBC213300A84B29 /* MainMenu.xib */; };
+		7AA1681E1BBC4AA200A84B29 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA1681C1BBC4AA200A84B29 /* ReactiveCocoa.framework */; };
+		7AA1681F1BBC4AA200A84B29 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA1681C1BBC4AA200A84B29 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AA168201BBC4AA200A84B29 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA1681D1BBC4AA200A84B29 /* Result.framework */; };
+		7AA168211BBC4AA200A84B29 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA1681D1BBC4AA200A84B29 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7AA168221BBC4AA200A84B29 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7AA1681F1BBC4AA200A84B29 /* ReactiveCocoa.framework in Embed Frameworks */,
+				7AA168211BBC4AA200A84B29 /* Result.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7AA1680C1BBC213300A84B29 /* WatchMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -18,6 +37,8 @@
 		7AA168111BBC213300A84B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AA168141BBC213300A84B29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7AA168161BBC213300A84B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AA1681C1BBC4AA200A84B29 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		7AA1681D1BBC4AA200A84B29 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA1681E1BBC4AA200A84B29 /* ReactiveCocoa.framework in Frameworks */,
+				7AA168201BBC4AA200A84B29 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +59,7 @@
 			children = (
 				7AA1680E1BBC213300A84B29 /* WatchMan */,
 				7AA1680D1BBC213300A84B29 /* Products */,
+				7AA168231BBC4AA700A84B29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +82,15 @@
 			path = WatchMan;
 			sourceTree = "<group>";
 		};
+		7AA168231BBC4AA700A84B29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AA1681C1BBC4AA200A84B29 /* ReactiveCocoa.framework */,
+				7AA1681D1BBC4AA200A84B29 /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,6 +101,7 @@
 				7AA168081BBC213300A84B29 /* Sources */,
 				7AA168091BBC213300A84B29 /* Frameworks */,
 				7AA1680A1BBC213300A84B29 /* Resources */,
+				7AA168221BBC4AA200A84B29 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +264,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = WatchMan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.WatchMan";
@@ -242,6 +280,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = WatchMan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.WatchMan";
