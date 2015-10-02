@@ -14,6 +14,8 @@
 		7AA1681F1BBC4AA200A84B29 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA1681C1BBC4AA200A84B29 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AA168201BBC4AA200A84B29 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA1681D1BBC4AA200A84B29 /* Result.framework */; };
 		7AA168211BBC4AA200A84B29 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA1681D1BBC4AA200A84B29 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AA168251BBC4BB300A84B29 /* Watcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA168241BBC4BB300A84B29 /* Watcher.swift */; settings = {ASSET_TAGS = (); }; };
+		7AA168271BBC500500A84B29 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA168261BBC500500A84B29 /* CoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +41,8 @@
 		7AA168161BBC213300A84B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AA1681C1BBC4AA200A84B29 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		7AA1681D1BBC4AA200A84B29 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		7AA168241BBC4BB300A84B29 /* Watcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watcher.swift; sourceTree = "<group>"; };
+		7AA168261BBC500500A84B29 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA168271BBC500500A84B29 /* CoreServices.framework in Frameworks */,
 				7AA1681E1BBC4AA200A84B29 /* ReactiveCocoa.framework in Frameworks */,
 				7AA168201BBC4AA200A84B29 /* Result.framework in Frameworks */,
 			);
@@ -78,6 +83,7 @@
 				7AA168111BBC213300A84B29 /* Assets.xcassets */,
 				7AA168131BBC213300A84B29 /* MainMenu.xib */,
 				7AA168161BBC213300A84B29 /* Info.plist */,
+				7AA168241BBC4BB300A84B29 /* Watcher.swift */,
 			);
 			path = WatchMan;
 			sourceTree = "<group>";
@@ -85,6 +91,7 @@
 		7AA168231BBC4AA700A84B29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AA168261BBC500500A84B29 /* CoreServices.framework */,
 				7AA1681C1BBC4AA200A84B29 /* ReactiveCocoa.framework */,
 				7AA1681D1BBC4AA200A84B29 /* Result.framework */,
 			);
@@ -161,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA168251BBC4BB300A84B29 /* Watcher.swift in Sources */,
 				7AA168101BBC213300A84B29 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +318,7 @@
 				7AA1681B1BBC213300A84B29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
