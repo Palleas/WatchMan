@@ -18,16 +18,29 @@ class Wrapper<T>: AnyObject {
     }
 }
 
-func watchFolder(path: String) -> SignalProducer<String, NoError> {
+public enum DirectoryWatchingError: ErrorType {
+    case DirectoryDoesNotExist(String)
+    case NotADirectory
+}
+
+/// This function takes a String containing the path to a folder to 
+/// observe
+func watchFolder(path: String) -> SignalProducer<String, DirectoryWatchingError> {
+    var isDirectory: ObjCBool = true
+    if !NSFileManager.defaultManager().fileExistsAtPath(path, isDirectory: &isDirectory) {
+        return SignalProducer(error: .DirectoryDoesNotExist(path))
+    } else if !isDirectory.boolValue {
+        return SignalProducer(error: .NotADirectory)
+    }
+    
     return SignalProducer { sink, disposable in
         let flags = UInt32(kFSEventStreamCreateFlagUseCFTypes | kFSEventStreamCreateFlagFileEvents)
         let sinceWhen: FSEventStreamEventId = UInt64(kFSEventStreamEventIdSinceNow)
         
         let eventCallback: FSEventStreamCallback = { (stream, contextInfo, numEvents, eventPaths, eventFlags, eventIds) in
-            print("***** FSEventCallback Fired *****")
-            
-            let yolo = Unmanaged<Wrapper<Signal<String, NoError>.Observer>>.fromOpaque(COpaquePointer(contextInfo)).takeUnretainedValue()
-            sendNext(yolo.value, "")
+            let sinkWrapper = Unmanaged<Wrapper<Signal<String, NoError>.Observer>>.fromOpaque(COpaquePointer(contextInfo)).takeUnretainedValue()
+            let paths = unsafeBitCast(eventPaths, NSArray.self) as? [String]
+            paths?.forEach({ sendNext(sinkWrapper.value, $0) })
         }
 
         let unmanaged = Unmanaged.passRetained(Wrapper(sink))
@@ -40,7 +53,9 @@ func watchFolder(path: String) -> SignalProducer<String, NoError> {
         FSEventStreamStart(eventStream)
         
         disposable.addDisposable({ () -> () in
-            print("Disposing of event stream...")
+            FSEventStreamStop(eventStream)
+            FSEventStreamInvalidate(eventStream)
+            FSEventStreamRelease(eventStream)
         })
     }
  }
