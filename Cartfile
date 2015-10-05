@@ -1,1 +1,2 @@
 github "ReactiveCocoa/ReactiveCocoa" "swift2"
+github "robrix/Box"
