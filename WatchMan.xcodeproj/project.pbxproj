@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0908321BC348EE00E8FE5C /* WatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0908311BC348EE00E8FE5C /* WatcherTests.swift */; };
+		7A0908391BC3496700E8FE5C /* Watcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA168241BBC4BB300A84B29 /* Watcher.swift */; settings = {ASSET_TAGS = (); }; };
+		7A09083A1BC3498C00E8FE5C /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA1681C1BBC4AA200A84B29 /* ReactiveCocoa.framework */; };
 		7AA168101BBC213300A84B29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1680F1BBC213300A84B29 /* AppDelegate.swift */; };
 		7AA168121BBC213300A84B29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA168111BBC213300A84B29 /* Assets.xcassets */; };
 		7AA168151BBC213300A84B29 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA168131BBC213300A84B29 /* MainMenu.xib */; };
@@ -17,6 +20,16 @@
 		7AA168251BBC4BB300A84B29 /* Watcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA168241BBC4BB300A84B29 /* Watcher.swift */; settings = {ASSET_TAGS = (); }; };
 		7AA168271BBC500500A84B29 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA168261BBC500500A84B29 /* CoreServices.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A0908341BC348EE00E8FE5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AA168041BBC213300A84B29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AA1680B1BBC213300A84B29;
+			remoteInfo = WatchMan;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7AA168221BBC4AA200A84B29 /* Embed Frameworks */ = {
@@ -34,6 +47,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A09082F1BC348EE00E8FE5C /* WatchManTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchManTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A0908311BC348EE00E8FE5C /* WatcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatcherTests.swift; sourceTree = "<group>"; };
+		7A0908331BC348EE00E8FE5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AA1680C1BBC213300A84B29 /* WatchMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA1680F1BBC213300A84B29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AA168111BBC213300A84B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +62,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7A09082C1BC348EE00E8FE5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A09083A1BC3498C00E8FE5C /* ReactiveCocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AA168091BBC213300A84B29 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,10 +83,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A0908301BC348EE00E8FE5C /* WatchManTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A0908311BC348EE00E8FE5C /* WatcherTests.swift */,
+				7A0908331BC348EE00E8FE5C /* Info.plist */,
+			);
+			path = WatchManTests;
+			sourceTree = "<group>";
+		};
 		7AA168031BBC213300A84B29 = {
 			isa = PBXGroup;
 			children = (
 				7AA1680E1BBC213300A84B29 /* WatchMan */,
+				7A0908301BC348EE00E8FE5C /* WatchManTests */,
 				7AA1680D1BBC213300A84B29 /* Products */,
 				7AA168231BBC4AA700A84B29 /* Frameworks */,
 			);
@@ -72,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				7AA1680C1BBC213300A84B29 /* WatchMan.app */,
+				7A09082F1BC348EE00E8FE5C /* WatchManTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +136,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7A09082E1BC348EE00E8FE5C /* WatchManTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A0908381BC348EE00E8FE5C /* Build configuration list for PBXNativeTarget "WatchManTests" */;
+			buildPhases = (
+				7A09082B1BC348EE00E8FE5C /* Sources */,
+				7A09082C1BC348EE00E8FE5C /* Frameworks */,
+				7A09082D1BC348EE00E8FE5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A0908351BC348EE00E8FE5C /* PBXTargetDependency */,
+			);
+			name = WatchManTests;
+			productName = WatchManTests;
+			productReference = 7A09082F1BC348EE00E8FE5C /* WatchManTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7AA1680B1BBC213300A84B29 /* WatchMan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7AA168191BBC213300A84B29 /* Build configuration list for PBXNativeTarget "WatchMan" */;
@@ -128,6 +181,10 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Perfectly-Cooked";
 				TargetAttributes = {
+					7A09082E1BC348EE00E8FE5C = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 7AA1680B1BBC213300A84B29;
+					};
 					7AA1680B1BBC213300A84B29 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -147,11 +204,19 @@
 			projectRoot = "";
 			targets = (
 				7AA1680B1BBC213300A84B29 /* WatchMan */,
+				7A09082E1BC348EE00E8FE5C /* WatchManTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7A09082D1BC348EE00E8FE5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AA1680A1BBC213300A84B29 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -164,6 +229,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7A09082B1BC348EE00E8FE5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A0908391BC3496700E8FE5C /* Watcher.swift in Sources */,
+				7A0908321BC348EE00E8FE5C /* WatcherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AA168081BBC213300A84B29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,6 +248,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A0908351BC348EE00E8FE5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AA1680B1BBC213300A84B29 /* WatchMan */;
+			targetProxy = 7A0908341BC348EE00E8FE5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7AA168131BBC213300A84B29 /* MainMenu.xib */ = {
@@ -187,6 +269,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7A0908361BC348EE00E8FE5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = WatchManTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.WatchManTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchMan.app/Contents/MacOS/WatchMan";
+			};
+			name = Debug;
+		};
+		7A0908371BC348EE00E8FE5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = WatchManTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.WatchManTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchMan.app/Contents/MacOS/WatchMan";
+			};
+			name = Release;
+		};
 		7AA168171BBC213300A84B29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -302,6 +420,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7A0908381BC348EE00E8FE5C /* Build configuration list for PBXNativeTarget "WatchManTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A0908361BC348EE00E8FE5C /* Debug */,
+				7A0908371BC348EE00E8FE5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7AA168071BBC213300A84B29 /* Build configuration list for PBXProject "WatchMan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

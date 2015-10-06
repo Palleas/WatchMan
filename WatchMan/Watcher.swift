@@ -20,17 +20,30 @@ class Wrapper<T>: AnyObject {
 
 public enum DirectoryWatchingError: ErrorType {
     case DirectoryDoesNotExist(String)
-    case NotADirectory
+    case NotADirectory(String)
 }
 
-/// This function takes a String containing the path to a folder to 
+extension DirectoryWatchingError: Equatable {}
+public func ==(lhs:DirectoryWatchingError, rhs:DirectoryWatchingError) -> Bool {
+    switch (lhs, rhs) {
+    case let (.DirectoryDoesNotExist(left), .DirectoryDoesNotExist(right)):
+        return left == right
+    case let (.NotADirectory(left), .NotADirectory(right)):
+        return left == right
+    default:
+        return false
+    }
+}
+
+
+/// This function takes a String containing the path to a folder to
 /// observe
 func watchFolder(path: String) -> SignalProducer<String, DirectoryWatchingError> {
     var isDirectory: ObjCBool = true
     if !NSFileManager.defaultManager().fileExistsAtPath(path, isDirectory: &isDirectory) {
         return SignalProducer(error: .DirectoryDoesNotExist(path))
     } else if !isDirectory.boolValue {
-        return SignalProducer(error: .NotADirectory)
+        return SignalProducer(error: .NotADirectory(path))
     }
     
     return SignalProducer { sink, disposable in
